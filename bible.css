@@ -1,0 +1,1772 @@
+/* ==========================================
+   WALK WITH GOD
+   BEAUTIFUL BIBLE WEBSITE
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Trebuchet MS",
+        "Segoe UI",
+        sans-serif;
+
+    color: #51435e;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #fff8df 0%,
+            #f4ecff 30%,
+            #dcecff 70%,
+            #d7e6f7 100%
+        );
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   STARS
+========================================== */
+
+.stars {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -5;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.9) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    opacity: 0.6;
+}
+
+
+/* ==========================================
+   CLOUDS
+========================================== */
+
+.cloud {
+    position: fixed;
+
+    width: 280px;
+    height: 90px;
+
+    border-radius: 100px;
+
+    background: rgba(255,255,255,0.35);
+
+    filter: blur(8px);
+
+    pointer-events: none;
+
+    z-index: -3;
+
+    animation: cloudMove 18s linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+
+    position: absolute;
+
+    background: rgba(255,255,255,0.45);
+
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 120px;
+    height: 120px;
+
+    left: 50px;
+    top: -55px;
+}
+
+.cloud::after {
+    width: 150px;
+    height: 150px;
+
+    right: 30px;
+    top: -80px;
+}
+
+.cloud1 {
+    top: 25%;
+    left: -300px;
+}
+
+.cloud2 {
+    top: 55%;
+    left: -400px;
+
+    animation-delay: 6s;
+
+    transform: scale(0.7);
+}
+
+.cloud3 {
+    top: 75%;
+    left: -500px;
+
+    animation-delay: 11s;
+
+    transform: scale(1.2);
+}
+
+@keyframes cloudMove {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(
+            calc(100vw + 700px)
+        );
+    }
+
+}
+
+
+/* ==========================================
+   FLOATING SYMBOLS
+========================================== */
+
+.floating-symbol {
+    position: fixed;
+
+    pointer-events: none;
+
+    color: rgba(166,125,178,0.3);
+
+    font-size: 30px;
+
+    z-index: -1;
+
+    animation: floatSymbol 7s ease-in-out infinite;
+}
+
+.symbol1 {
+    left: 7%;
+    top: 25%;
+}
+
+.symbol2 {
+    right: 8%;
+    top: 20%;
+
+    animation-delay: 1s;
+}
+
+.symbol3 {
+    left: 13%;
+    bottom: 20%;
+
+    animation-delay: 2s;
+}
+
+.symbol4 {
+    right: 12%;
+    bottom: 30%;
+
+    animation-delay: 3s;
+}
+
+.symbol5 {
+    right: 30%;
+    top: 15%;
+
+    animation-delay: 4s;
+}
+
+@keyframes floatSymbol {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-30px)
+            rotate(15deg);
+    }
+
+}
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+nav {
+    width: min(1150px, 92%);
+
+    margin: 20px auto;
+
+    padding: 15px 22px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.55);
+
+    border:
+        1px solid rgba(255,255,255,0.8);
+
+    backdrop-filter: blur(15px);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 10px 35px rgba(95,78,120,0.08);
+}
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.cross-logo {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d6b3df,
+            #a98ab8
+        );
+
+    color: white;
+
+    font-size: 23px;
+
+    box-shadow:
+        0 5px 15px rgba(120,90,140,0.2);
+}
+
+.logo strong {
+    display: block;
+
+    color: #725b80;
+
+    letter-spacing: 1px;
+
+    font-size: 14px;
+}
+
+.logo small {
+    display: block;
+
+    color: #aa91b0;
+
+    margin-top: 2px;
+}
+
+.nav-links {
+    display: flex;
+
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    color: #776582;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #b177a4;
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+    min-height: 650px;
+
+    width: min(1000px, 92%);
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.hero-cross {
+    font-size: 70px;
+
+    color: #b28fc0;
+
+    text-shadow:
+        0 0 25px rgba(178,143,192,0.4);
+
+    animation:
+        gentleGlow 4s ease-in-out infinite;
+}
+
+@keyframes gentleGlow {
+
+    0%,
+    100% {
+        opacity: 0.75;
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translateY(-8px);
+    }
+
+}
+
+.eyebrow {
+    color: #b486aa;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    font-weight: bold;
+
+    margin-top: 20px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(48px, 9vw, 90px);
+
+    line-height: 1.02;
+
+    color: #66526f;
+
+    margin-top: 20px;
+}
+
+.hero h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            #9d73a8,
+            #c18da9,
+            #9d73a8
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.hero-text {
+    max-width: 650px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #8c7895;
+
+    margin-top: 25px;
+}
+
+.hero-button {
+    margin-top: 35px;
+
+    padding: 15px 28px;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b793c1,
+            #d19ebd
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 12px 30px
+        rgba(155,110,160,0.25);
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 18px 35px
+        rgba(155,110,160,0.35);
+}
+
+
+/* ==========================================
+   GOD MESSAGE
+========================================== */
+
+.god-message {
+    width: min(850px, 92%);
+
+    margin: 0 auto 100px;
+
+    padding: 30px;
+
+    border-radius: 30px;
+
+    display: flex;
+
+    gap: 22px;
+
+    align-items: center;
+
+    background:
+        rgba(255,255,255,0.58);
+
+    border:
+        1px solid rgba(255,255,255,0.8);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 15px 50px
+        rgba(100,80,120,0.08);
+}
+
+.message-icon {
+    font-size: 45px;
+}
+
+.god-message span {
+    color: #b27fa5;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+}
+
+.god-message h2 {
+    font-family: Georgia, serif;
+
+    color: #6d5876;
+
+    margin: 5px 0;
+}
+
+.god-message p {
+    color: #92809a;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   SECTION
+========================================== */
+
+.verse-section,
+.promises,
+.favorites-section {
+    width: min(1000px, 92%);
+
+    margin: auto;
+
+    padding-bottom: 120px;
+}
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.section-heading span {
+    color: #b27fa5;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    font-weight: bold;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(35px, 6vw, 55px);
+
+    color: #6b5575;
+
+    margin-top: 8px;
+}
+
+.section-heading p {
+    color: #95829d;
+
+    margin-top: 10px;
+}
+
+
+/* ==========================================
+   VERSE CARD
+========================================== */
+
+.verse-card {
+    position: relative;
+
+    width: min(800px, 100%);
+
+    margin: auto;
+
+    padding: 55px 35px;
+
+    border-radius: 40px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.85),
+            rgba(246,237,255,0.7)
+        );
+
+    border:
+        1px solid white;
+
+    box-shadow:
+        0 25px 70px
+        rgba(100,75,120,0.12);
+}
+
+.holy-light {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    left: 50%;
+    top: -200px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,239,178,0.7),
+            transparent 70%
+        );
+}
+
+.bible-icon {
+    position: relative;
+
+    font-size: 50px;
+
+    margin-bottom: 20px;
+}
+
+#verseText {
+    position: relative;
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(23px, 4vw, 34px);
+
+    line-height: 1.55;
+
+    color: #5e4d68;
+}
+
+#verseReference {
+    position: relative;
+
+    margin-top: 20px;
+
+    color: #b177a1;
+
+    font-weight: bold;
+
+    font-size: 17px;
+}
+
+.verse-actions {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+.verse-actions button {
+    border: none;
+
+    padding: 11px 18px;
+
+    border-radius: 30px;
+
+    background: #f1e2f0;
+
+    color: #765e7f;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.verse-actions button:hover {
+    transform: translateY(-3px);
+
+    background: #e7cfe3;
+}
+
+
+/* ==========================================
+   JAR
+========================================== */
+
+.jar-area {
+    text-align: center;
+
+    margin-top: 65px;
+
+    position: relative;
+}
+
+.jar-button {
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    position: relative;
+
+    padding: 30px 40px;
+
+    transition: 0.25s;
+}
+
+.jar-button:hover {
+    transform: scale(1.04);
+}
+
+.jar-button:active {
+    transform: scale(0.95);
+}
+
+.light-rays {
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    left: 50%;
+    top: 30px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,227,163,0.55),
+            transparent 68%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Lid */
+
+.jar-lid {
+    width: 175px;
+    height: 35px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 4;
+}
+
+.jar-lid::before {
+    content: "";
+
+    position: absolute;
+
+    width: 135px;
+    height: 28px;
+
+    left: 20px;
+
+    border-radius: 10px 10px 5px 5px;
+
+    background:
+        linear-gradient(
+            #d3b0d5,
+            #a982b3
+        );
+
+    border: 3px solid #96709d;
+
+    box-shadow:
+        0 5px 0 #86618e;
+}
+
+.lid-band {
+    position: absolute;
+
+    width: 160px;
+    height: 9px;
+
+    left: 7px;
+    top: 23px;
+
+    border-radius: 5px;
+
+    background: #b98dbb;
+}
+
+
+/* Jar */
+
+.jar {
+    width: 230px;
+    height: 285px;
+
+    margin: -2px auto 0;
+
+    position: relative;
+
+    border-radius:
+        30px
+        30px
+        65px
+        65px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.75),
+            rgba(210,228,250,0.35),
+            rgba(255,255,255,0.75)
+        );
+
+    border:
+        4px solid
+        rgba(168,150,181,0.6);
+
+    box-shadow:
+        inset 10px 0 20px
+        rgba(255,255,255,0.8),
+
+        inset -10px 0 20px
+        rgba(170,145,180,0.15),
+
+        0 25px 50px
+        rgba(100,80,120,0.18);
+
+    overflow: hidden;
+}
+
+.jar-glass-shine {
+    position: absolute;
+
+    left: 25px;
+    top: 35px;
+
+    width: 28px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.55);
+
+    transform: rotate(7deg);
+
+    z-index: 8;
+}
+
+
+/* Cross */
+
+.jar-cross {
+    position: absolute;
+
+    z-index: 7;
+
+    top: 35px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 45px;
+
+    color: rgba(142,108,157,0.65);
+}
+
+
+/* Label */
+
+.jar-label {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 95px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 160px;
+
+    padding: 18px 10px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,248,252,0.94);
+
+    border:
+        2px solid #dfc2db;
+
+    color: #9a6f94;
+
+    box-shadow:
+        0 8px 20px
+        rgba(100,70,100,0.12);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 3px;
+}
+
+.jar-label strong {
+    font-family: Georgia, serif;
+
+    font-size: 24px;
+}
+
+.jar-label small {
+    letter-spacing: 4px;
+
+    font-weight: bold;
+}
+
+
+/* Papers */
+
+.paper {
+    position: absolute;
+
+    width: 50px;
+    height: 36px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 5px;
+
+    background: #fff7d9;
+
+    color: #bd8fa8;
+
+    box-shadow:
+        0 3px 7px
+        rgba(70,50,70,0.15);
+
+    z-index: 3;
+}
+
+.p1 {
+    left: 15px;
+    bottom: 25px;
+
+    transform: rotate(-25deg);
+}
+
+.p2 {
+    right: 12px;
+    bottom: 25px;
+
+    transform: rotate(23deg);
+}
+
+.p3 {
+    left: 35px;
+    bottom: 60px;
+
+    transform: rotate(10deg);
+}
+
+.p4 {
+    right: 38px;
+    bottom: 65px;
+
+    transform: rotate(-14deg);
+}
+
+.p5 {
+    left: 88px;
+    bottom: 20px;
+
+    transform: rotate(5deg);
+}
+
+.p6 {
+    right: 85px;
+    bottom: 45px;
+
+    transform: rotate(20deg);
+}
+
+.p7 {
+    left: 85px;
+    bottom: 80px;
+
+    transform: rotate(-10deg);
+}
+
+
+/* Jar Shake */
+
+.jar-shake {
+    animation:
+        jarShake
+        0.8s
+        ease-in-out;
+}
+
+@keyframes jarShake {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    15% {
+        transform: rotate(-8deg);
+    }
+
+    30% {
+        transform: rotate(8deg);
+    }
+
+    45% {
+        transform: rotate(-7deg);
+    }
+
+    60% {
+        transform: rotate(7deg);
+    }
+
+    75% {
+        transform: rotate(-3deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+
+}
+
+.jar-area h3 {
+    color: #705979;
+
+    font-family: Georgia, serif;
+
+    margin-top: 15px;
+
+    font-size: 24px;
+}
+
+.jar-area p {
+    color: #a18ca8;
+
+    margin-top: 5px;
+}
+
+
+/* ==========================================
+   CATEGORIES
+========================================== */
+
+.categories {
+    width: min(800px, 100%);
+
+    margin:
+        50px auto 0;
+
+    text-align: center;
+}
+
+.categories h3 {
+    font-family: Georgia, serif;
+
+    color: #735c7d;
+
+    margin-bottom: 20px;
+}
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 10px;
+}
+
+.category-grid button {
+    border: none;
+
+    border-radius: 18px;
+
+    padding: 15px 8px;
+
+    background:
+        rgba(255,255,255,0.65);
+
+    color: #786481;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.category-grid button:first-child {
+    background:
+        linear-gradient(
+            145deg,
+            #d8c1df,
+            #c69fc2
+        );
+
+    color: white;
+}
+
+.category-grid button:hover {
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 10px 20px
+        rgba(100,80,120,0.12);
+}
+
+.category-grid button span {
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   PROMISES
+========================================== */
+
+.promise-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.promise {
+    padding: 30px 20px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,0.58);
+
+    border:
+        1px solid rgba(255,255,255,0.8);
+
+    box-shadow:
+        0 12px 35px
+        rgba(100,80,120,0.07);
+
+    transition: 0.25s;
+}
+
+.promise:hover {
+    transform:
+        translateY(-7px);
+}
+
+.promise > div {
+    font-size: 35px;
+
+    margin-bottom: 12px;
+}
+
+.promise h3 {
+    color: #6f5879;
+
+    font-family: Georgia, serif;
+}
+
+.promise p {
+    margin-top: 8px;
+
+    color: #95839c;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   PRAYER
+========================================== */
+
+.prayer-section {
+    width: 100%;
+
+    padding:
+        100px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dfd0e9,
+            #c9d9ee
+        );
+}
+
+.prayer-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,244,198,0.55),
+            transparent 70%
+        );
+}
+
+.prayer-content {
+    width: min(700px, 100%);
+
+    margin: auto;
+
+    position: relative;
+
+    text-align: center;
+}
+
+.prayer-content > span {
+    color: #8d6e96;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.prayer-content h2 {
+    font-family: Georgia, serif;
+
+    font-size: 50px;
+
+    color: #66526f;
+
+    margin-top: 8px;
+}
+
+.prayer-content > p {
+    color: #81728a;
+
+    line-height: 1.7;
+
+    margin: 15px auto 25px;
+
+    max-width: 600px;
+}
+
+textarea {
+    width: 100%;
+
+    min-height: 180px;
+
+    resize: vertical;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 25px;
+
+    padding: 22px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+    color: #65546d;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    box-shadow:
+        inset 0 2px 15px
+        rgba(100,80,120,0.08);
+}
+
+textarea::placeholder {
+    color: #b09fb5;
+}
+
+.prayer-content button {
+    margin-top: 15px;
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        #9b7da6;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#prayerSaved {
+    min-height: 20px;
+
+    color: #80648b;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   FAVORITES
+========================================== */
+
+.favorites-section {
+    padding-top: 100px;
+}
+
+.favorite-count {
+    text-align: center;
+
+    color: #9b879f;
+
+    margin-bottom: 25px;
+}
+
+#favoriteCount {
+    display: inline-flex;
+
+    width: 35px;
+    height: 35px;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #d8bfdc;
+
+    color: white;
+
+    font-weight: bold;
+
+    margin-right: 6px;
+}
+
+.favorite-item {
+    position: relative;
+
+    padding: 25px;
+
+    margin-bottom: 12px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,0.7);
+
+    border-left:
+        5px solid #c09bc0;
+
+    box-shadow:
+        0 8px 25px
+        rgba(100,80,120,0.06);
+}
+
+.favorite-item p {
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    color: #64536d;
+
+    padding-right: 25px;
+}
+
+.favorite-item small {
+    display: block;
+
+    color: #ae779e;
+
+    font-weight: bold;
+
+    margin-top: 8px;
+}
+
+.remove-favorite {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #ae8da9;
+
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+.empty-favorites {
+    text-align: center;
+
+    padding: 45px;
+
+    color: #a592ac;
+}
+
+
+/* ==========================================
+   FINAL MESSAGE
+========================================== */
+
+.final-message {
+    text-align: center;
+
+    padding:
+        100px 20px 120px;
+}
+
+.big-cross {
+    font-size: 65px;
+
+    color: #a783b1;
+
+    margin-bottom: 15px;
+}
+
+.final-message h2 {
+    font-family: Georgia, serif;
+
+    color: #6a5574;
+
+    font-size:
+        clamp(35px, 6vw, 55px);
+}
+
+.final-message p {
+    color: #95829d;
+
+    line-height: 2;
+
+    font-size: 18px;
+
+    margin-top: 15px;
+}
+
+.final-message strong {
+    color: #9b719d;
+}
+
+.amen {
+    margin-top: 20px;
+
+    font-family: Georgia, serif;
+
+    color: #b07ba2;
+
+    font-size: 23px;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+    text-align: center;
+
+    padding:
+        60px 20px;
+
+    background:
+        rgba(90,75,105,0.92);
+
+    color: white;
+}
+
+.footer-cross {
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+footer h3 {
+    letter-spacing: 4px;
+
+    font-size: 15px;
+}
+
+footer p {
+    margin-top: 7px;
+
+    opacity: 0.7;
+}
+
+.footer-line {
+    width: 80px;
+
+    height: 1px;
+
+    background: rgba(255,255,255,0.4);
+
+    margin: 25px auto;
+}
+
+footer small {
+    display: block;
+
+    opacity: 0.65;
+
+    margin-top: 5px;
+}
+
+
+/* ==========================================
+   POPUP
+========================================== */
+
+.popup {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(60,45,75,0.4);
+
+    backdrop-filter:
+        blur(6px);
+
+    z-index: 100;
+}
+
+.popup.show {
+    display: flex;
+}
+
+.popup-box {
+    width: min(400px, 90%);
+
+    padding: 40px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 80px
+        rgba(40,30,50,0.25);
+
+    animation:
+        popupIn
+        0.35s
+        ease;
+}
+
+.popup-icon {
+    font-size: 55px;
+}
+
+.popup-box h2 {
+    font-family: Georgia, serif;
+
+    color: #6c5675;
+
+    margin-top: 10px;
+}
+
+.popup-box p {
+    color: #96839d;
+
+    margin: 10px 0 25px;
+}
+
+.popup-box button {
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    background:
+        #a782b1;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+@keyframes popupIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.8)
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 750px) {
+
+    nav {
+        padding: 12px 15px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .god-message {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .category-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .promise-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    main {
+        width: 94%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .jar {
+        width: 200px;
+        height: 255px;
+    }
+
+    .jar-label {
+        top: 85px;
+    }
+
+    .jar-cross {
+        font-size: 38px;
+    }
+
+    .category-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .promise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .verse-card {
+        padding:
+            40px 20px;
+    }
+
+    .prayer-content h2 {
+        font-size: 40px;
+    }
+
+}

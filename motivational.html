@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Walk With God ✝️ | Bible Verse Jar</title>
+
+    <link rel="stylesheet" href="bible.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         HEAVENLY BACKGROUND
+    ================================= -->
+
+    <div class="stars"></div>
+
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+    <div class="floating-symbol symbol1">✝</div>
+    <div class="floating-symbol symbol2">✦</div>
+    <div class="floating-symbol symbol3">♡</div>
+    <div class="floating-symbol symbol4">🕊</div>
+    <div class="floating-symbol symbol5">✧</div>
+
+
+    <!-- ================================
+         NAVIGATION
+    ================================= -->
+
+    <nav>
+
+        <div class="logo">
+            <div class="cross-logo">✝</div>
+
+            <div>
+                <strong>WALK WITH GOD</strong>
+                <small>Faith • Hope • Love</small>
+            </div>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#verse">Verse</a>
+
+            <a href="#prayer">Prayer</a>
+
+            <a href="#favorites">Favorites</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <header id="home" class="hero">
+
+        <div class="hero-cross">
+            ✝
+        </div>
+
+        <p class="eyebrow">
+            ✦ A MOMENT WITH GOD ✦
+        </p>
+
+        <h1>
+            Be Still.
+            <br>
+            <span>God Is With You.</span>
+        </h1>
+
+        <p class="hero-text">
+            Take a moment to slow down, breathe, pray,
+            and allow God's Word to speak to your heart.
+        </p>
+
+        <a href="#verse" class="hero-button">
+            Open God's Word ↓
+        </a>
+
+    </header>
+
+
+    <!-- ================================
+         DAILY MESSAGE
+    ================================= -->
+
+    <section class="god-message">
+
+        <div class="message-icon">
+            🕊️
+        </div>
+
+        <div>
+
+            <span>REMEMBER TODAY</span>
+
+            <h2>
+                You are never walking alone.
+            </h2>
+
+            <p>
+                God is beside you in every season,
+                every struggle, every joy,
+                and every unanswered prayer.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         VERSE SECTION
+    ================================= -->
+
+    <section id="verse" class="verse-section">
+
+        <div class="section-heading">
+
+            <span>📖 GOD'S WORD</span>
+
+            <h2>
+                Bible Verse Jar
+            </h2>
+
+            <p>
+                Reach into the jar and receive a message
+                from God's Word.
+            </p>
+
+        </div>
+
+
+        <!-- Verse Card -->
+
+        <div class="verse-card">
+
+            <div class="holy-light"></div>
+
+            <div class="bible-icon">
+                📖
+            </div>
+
+            <p id="verseText">
+                Your Bible verse is waiting...
+            </p>
+
+            <div id="verseReference">
+                ✦ Click the jar below ✦
+            </div>
+
+            <div class="verse-actions">
+
+                <button onclick="favoriteVerse()">
+                    ♡ Save
+                </button>
+
+                <button onclick="copyVerse()">
+                    📋 Copy
+                </button>
+
+                <button onclick="shareVerse()">
+                    ↗ Share
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================
+             JAR
+        ================================= -->
+
+        <div class="jar-area">
+
+            <div class="light-rays"></div>
+
+            <button
+                class="jar-button"
+                id="jarButton"
+                onclick="getRandomVerse()"
+                aria-label="Open Bible verse jar"
+            >
+
+                <!-- Lid -->
+
+                <div class="jar-lid">
+
+                    <div class="lid-band"></div>
+
+                </div>
+
+
+                <!-- Jar -->
+
+                <div class="jar">
+
+                    <div class="jar-glass-shine"></div>
+
+                    <!-- Cross -->
+
+                    <div class="jar-cross">
+                        ✝
+                    </div>
+
+
+                    <!-- Label -->
+
+                    <div class="jar-label">
+
+                        <span>✦</span>
+
+                        <strong>
+                            GOD'S
+                        </strong>
+
+                        <small>
+                            WORD
+                        </small>
+
+                        <span>
+                            ✦
+                        </span>
+
+                    </div>
+
+
+                    <!-- Papers -->
+
+                    <div class="paper p1">
+                        ✝
+                    </div>
+
+                    <div class="paper p2">
+                        ♥
+                    </div>
+
+                    <div class="paper p3">
+                        ✦
+                    </div>
+
+                    <div class="paper p4">
+                        ✧
+                    </div>
+
+                    <div class="paper p5">
+                        ✝
+                    </div>
+
+                    <div class="paper p6">
+                        ♡
+                    </div>
+
+                    <div class="paper p7">
+                        ✦
+                    </div>
+
+                </div>
+
+            </button>
+
+
+            <h3>
+                Touch the jar
+            </h3>
+
+            <p>
+                and let God's Word find you today.
+            </p>
+
+        </div>
+
+
+        <!-- ================================
+             CATEGORIES
+        ================================= -->
+
+        <div class="categories">
+
+            <h3>
+                What does your heart need today?
+            </h3>
+
+            <div class="category-grid">
+
+                <button onclick="chooseCategory('all')">
+                    ✨
+                    <span>Any Word</span>
+                </button>
+
+                <button onclick="chooseCategory('hope')">
+                    🌅
+                    <span>Hope</span>
+                </button>
+
+                <button onclick="chooseCategory('faith')">
+                    ✝️
+                    <span>Faith</span>
+                </button>
+
+                <button onclick="chooseCategory('peace')">
+                    🕊️
+                    <span>Peace</span>
+                </button>
+
+                <button onclick="chooseCategory('strength')">
+                    🛡️
+                    <span>Strength</span>
+                </button>
+
+                <button onclick="chooseCategory('love')">
+                    ❤️
+                    <span>Love</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         GOD'S PROMISES
+    ================================= -->
+
+    <section class="promises">
+
+        <div class="section-heading">
+
+            <span>✦ GOD'S PROMISES ✦</span>
+
+            <h2>
+                Hold These Truths Close
+            </h2>
+
+        </div>
+
+
+        <div class="promise-grid">
+
+            <div class="promise">
+
+                <div>✝</div>
+
+                <h3>
+                    God Loves You
+                </h3>
+
+                <p>
+                    His love does not disappear
+                    when life becomes difficult.
+                </p>
+
+            </div>
+
+
+            <div class="promise">
+
+                <div>🕊</div>
+
+                <h3>
+                    God Gives Peace
+                </h3>
+
+                <p>
+                    Bring your worries to Him
+                    and trust His presence.
+                </p>
+
+            </div>
+
+
+            <div class="promise">
+
+                <div>🌅</div>
+
+                <h3>
+                    God Gives Hope
+                </h3>
+
+                <p>
+                    Even when you cannot see the way,
+                    God is still working.
+                </p>
+
+            </div>
+
+
+            <div class="promise">
+
+                <div>🛡️</div>
+
+                <h3>
+                    God Is Your Strength
+                </h3>
+
+                <p>
+                    You don't have to carry
+                    everything by yourself.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         PRAYER
+    ================================= -->
+
+    <section id="prayer" class="prayer-section">
+
+        <div class="prayer-glow"></div>
+
+        <div class="prayer-content">
+
+            <span>
+                🙏 YOUR QUIET PLACE
+            </span>
+
+            <h2>
+                Talk to God
+            </h2>
+
+            <p>
+                Write your prayer below.
+                You can use this space to pour out
+                your heart, your worries, your gratitude,
+                or your dreams.
+            </p>
+
+            <textarea
+                id="prayerText"
+                placeholder="Dear God..."
+            ></textarea>
+
+            <button onclick="savePrayer()">
+                🙏 Save My Prayer
+            </button>
+
+            <p id="prayerSaved"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         FAVORITES
+    ================================= -->
+
+    <section id="favorites" class="favorites-section">
+
+        <div class="section-heading">
+
+            <span>♡ YOUR TREASURES</span>
+
+            <h2>
+                Favorite Verses
+            </h2>
+
+            <p>
+                Keep the words that touched your heart.
+            </p>
+
+        </div>
+
+
+        <div class="favorite-count">
+
+            <span id="favoriteCount">
+                0
+            </span>
+
+            <span>
+                verses saved
+            </span>
+
+        </div>
+
+
+        <div id="favoriteList">
+
+            <div class="empty-favorites">
+
+                <div>
+                    📖
+                </div>
+
+                <p>
+                    Your favorite Bible verses
+                    will appear here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         FINAL MESSAGE
+    ================================= -->
+
+    <section class="final-message">
+
+        <div class="big-cross">
+            ✝
+        </div>
+
+        <h2>
+            Keep Your Eyes on God.
+        </h2>
+
+        <p>
+            When you feel lost, pray.
+            <br>
+            When you feel afraid, trust.
+            <br>
+            When you feel alone, remember:
+            <br>
+            <strong>God is with you.</strong>
+        </p>
+
+        <div class="amen">
+            Amen. ♡
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <div class="footer-cross">
+            ✝
+        </div>
+
+        <h3>
+            WALK WITH GOD
+        </h3>
+
+        <p>
+            Faith • Hope • Love
+        </p>
+
+        <div class="footer-line"></div>
+
+        <small>
+            “Your word is a lamp for my feet,
+            a light on my path.”
+        </small>
+
+        <small>
+            Psalm 119:105
+        </small>
+
+    </footer>
+
+
+    <!-- ================================
+         POPUP
+    ================================= -->
+
+    <div id="popup" class="popup">
+
+        <div class="popup-box">
+
+            <div class="popup-icon">
+                🕊️
+            </div>
+
+            <h2>
+                Saved to Your Heart
+            </h2>
+
+            <p>
+                This verse has been added
+                to your favorite verses.
+            </p>
+
+            <button onclick="closePopup()">
+                Amen ♡
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="bible.js"></script>
+
+</body>
+</html>
